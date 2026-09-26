@@ -127,6 +127,14 @@
 
           <section class="settings-block">
             <div class="block-heading"><div><span>JEDNOTLIVĚ</span><h3>Konkrétní produkty</h3></div><strong id="enabledCount">0 aktivních</strong></div>
+            <div class="product-toolbar">
+              <label class="search-wrap"><span>Vyhledat</span><input id="productSearch" type="search" placeholder="Hledat produkt, edici nebo typ…" /></label>
+              <label><span>Edice</span><select id="focusSetSelect"></select></label>
+              <label><span>Typ</span><select id="focusTypeSelect"></select></label>
+              <label><span>Zobrazení</span><select id="productStateSelect"><option value="all">Vše</option><option value="enabled">Jen aktivní</option><option value="disabled">Jen vypnuté</option></select></label>
+              <label><span>Řazení</span><select id="productSort"><option value="set">Podle edice</option><option value="name">Název A–Z</option><option value="type">Podle typu</option></select></label>
+              <label><span>Rychlá akce</span><select id="quickSelect"><option value="all">Vyber akci…</option><option value="enable-visible">Zapnout zobrazené</option><option value="disable-visible">Vypnout zobrazené</option><option value="only-visible">Nechat jen zobrazené</option></select></label>
+            </div>
             <div class="product-grid" id="productGrid"></div>
           </section>
 
