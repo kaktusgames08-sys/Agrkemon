@@ -1,42 +1,29 @@
-const IMG = {
-  celebrationEtb: 'https://target.scene7.com/is/image/Target/GUEST_40ed4d44-2adc-4cfe-a27b-0ce8b6e73cba?fmt=pjpeg&hei=600&wid=600',
-  celebrationGreninja: 'https://target.scene7.com/is/image/Target/GUEST_5f91a99f-2a33-4c89-8dbf-db1243d413a2?fmt=pjpeg&hei=600&wid=600',
-  celebrationSylveon: 'https://target.scene7.com/is/image/Target/GUEST_65085291-1d03-4b66-8c88-729c7ac7b66b?fmt=pjpeg&hei=600&wid=600',
-  pitchEtb: 'https://target.scene7.com/is/image/Target/GUEST_a21f87e0-c6a8-48f4-bb66-2e4c626562d6?fmt=pjpeg&hei=600&wid=600',
-  pitchBundle: 'https://target.scene7.com/is/image/Target/GUEST_ad499d78-6ba6-4abc-a993-30cc3f5776d3?fmt=pjpeg&hei=600&wid=600',
-  chaosEtb: 'https://target.scene7.com/is/image/Target/GUEST_9a0e801e-fad5-4f22-905d-5c167f03ac41?fmt=pjpeg&hei=600&wid=600',
-  chaosBundle: 'https://target.scene7.com/is/image/Target/GUEST_de896676-8332-46bd-b36f-d863b43df7ad?fmt=pjpeg&hei=600&wid=600',
-  perfectEtb: 'https://skyfoxgames.com/cdn/shop/files/Perfect-Order-Elite-Trainer-Box_6c68a5a1-e802-41f6-998d-d679d8495ba6_800x.jpg?v=1767817675',
-  perfectBundle: 'https://target.scene7.com/is/image/Target/GUEST_add75f83-a4e4-44ed-b284-77b0dfb93cee?fmt=pjpeg&hei=600&wid=600',
-  ascEtb: 'https://www.pokemon.com/static-assets/content-assets/cms2-fr-fr/img/trading-card-game/series/incrementals/2026/me2pt5-elite-trainer-box/me2pt5-elite-trainer-box-169-fr.png',
-  ascBundle: 'https://www.pokemon.com/static-assets/content-assets/cms2-fr-fr/img/trading-card-game/series/incrementals/2026/me2pt5-booster-bundle/me2pt5-booster-bundle-169-fr.png',
-  ascPoster: 'https://www.pokemon.com/static-assets/content-assets/cms2-fr-fr/img/trading-card-game/series/incrementals/2026/me2pt5-premium-poster-collection/me2pt5-premium-poster-collection-169-fr.png'
-};
-
 const DEFAULT_PRODUCTS = [
-  {id:'30c-etb',set:'30th Celebration',type:'Elite Trainer Box',name:'30th Celebration Elite Trainer Box',image:IMG.celebrationEtb,color:'#f2c84b',enabled:true},
-  {id:'30c-greninja',set:'30th Celebration',type:'Collection Box',name:'Greninja ex Box',image:IMG.celebrationGreninja,color:'#3f7fdb',enabled:true},
-  {id:'30c-sylveon',set:'30th Celebration',type:'Collection Box',name:'Sylveon ex Box',image:IMG.celebrationSylveon,color:'#ef7db4',enabled:true},
-  {id:'30c-poster',set:'30th Celebration',type:'Collection Box',name:'Poster Collection',image:IMG.celebrationEtb,color:'#f0ba35',enabled:true},
-  {id:'pbl-etb',set:'Pitch Black',type:'Elite Trainer Box',name:'Pitch Black Elite Trainer Box',image:IMG.pitchEtb,color:'#3d315f',enabled:true},
-  {id:'pbl-bundle',set:'Pitch Black',type:'Booster Bundle',name:'Pitch Black Booster Bundle',image:IMG.pitchBundle,color:'#6b49a7',enabled:true},
-  {id:'cri-etb',set:'Chaos Rising',type:'Elite Trainer Box',name:'Chaos Rising Elite Trainer Box',image:IMG.chaosEtb,color:'#d64557',enabled:true},
-  {id:'cri-bundle',set:'Chaos Rising',type:'Booster Bundle',name:'Chaos Rising Booster Bundle',image:IMG.chaosBundle,color:'#49a6e9',enabled:true},
-  {id:'por-etb',set:'Perfect Order',type:'Elite Trainer Box',name:'Perfect Order Elite Trainer Box',image:IMG.perfectEtb,color:'#47aeba',enabled:true},
-  {id:'por-bundle',set:'Perfect Order',type:'Booster Bundle',name:'Perfect Order Booster Bundle',image:IMG.perfectBundle,color:'#e34d72',enabled:true},
-  {id:'asc-etb',set:'Ascended Heroes',type:'Elite Trainer Box',name:'Ascended Heroes Elite Trainer Box',image:IMG.ascEtb,color:'#ea9958',enabled:true},
-  {id:'asc-bundle',set:'Ascended Heroes',type:'Booster Bundle',name:'Ascended Heroes Booster Bundle',image:IMG.ascBundle,color:'#4f82d4',enabled:true},
-  {id:'asc-poster',set:'Ascended Heroes',type:'Collection Box',name:'Premium Poster Collection',image:IMG.ascPoster,color:'#e25760',enabled:true},
+  {id:'30c-etb',set:'30th Celebration',type:'Elite Trainer Box',name:'30th Celebration Elite Trainer Box',image:'https://collectiblemadness.com.au/cdn/shop/files/Pokemon-TCG-30th-Celebration-Elite-Trainer-Box_EN_1.jpg?v=1783072905&width=1800',color:'#f2c84b',enabled:true},
+  {id:'30c-greninja',set:'30th Celebration',type:'Collection Box',name:'Greninja ex Box',image:'https://gatheringgames.co.uk/cdn/shop/files/pokemon-tcg-30th-celebration-greninja-ex-box-5729065.png?v=1783142172&width=600',color:'#3f7fdb',enabled:true},
+  {id:'30c-sylveon',set:'30th Celebration',type:'Collection Box',name:'Sylveon ex Box',image:'https://primary.jwwb.nl/public/h/t/i/temp-zjpebgcobmaxydcmrfwb/pokemon_tcg_30th_celebration_sylveon_ex_box_en-high.jpg',color:'#ef7db4',enabled:true},
+  {id:'30c-poster',set:'30th Celebration',type:'Collection Box',name:'Poster Collection',image:'https://collectorcenter.cl/cdn/shop/files/Pokemon_TCG_30th_Celebration_Poster_Collection_EN-copy-scaled.webp?v=1783089837&width=1445',color:'#f0ba35',enabled:true},
+  {id:'pbl-etb',set:'Pitch Black',type:'Elite Trainer Box',name:'Pitch Black Elite Trainer Box',image:'https://lootcardshop.com/cdn/shop/files/692947.jpg?v=1777925825&width=1445',color:'#5d6678',enabled:true},
+  {id:'pbl-bundle',set:'Pitch Black',type:'Booster Bundle',name:'Pitch Black Booster Bundle',image:'https://www.cardcollector2.com/cdn/shop/files/958314_004_071326.png?v=1784303647',color:'#3b3f58',enabled:true},
+  {id:'cri-etb',set:'Chaos Rising',type:'Elite Trainer Box',name:'Chaos Rising Elite Trainer Box',image:'https://tradingcardmarket.com/cdn/shop/files/PokemonMegaEvolutionChaosRisingEliteTrainerBox.jpg?v=1773761854&width=1920',color:'#d64557',enabled:true},
+  {id:'cri-bundle',set:'Chaos Rising',type:'Booster Bundle',name:'Chaos Rising Booster Bundle',image:'https://card-binder.com/cdn/shop/files/Pokemon-Chaos-Rising-Booster-Bundle.webp?v=1773346490&width=1500',color:'#49a6e9',enabled:true},
+  {id:'por-etb',set:'Perfect Order',type:'Elite Trainer Box',name:'Perfect Order Elite Trainer Box',image:'https://i5.walmartimages.com/seo/Pokemon-TCG-Mega-Evolution-Perfect-Order-Elite-Trainer-Box_16847947-8ec4-42c4-a5e3-e2a3b7dfadc0.32f7f8c19c3a35415de631a43c9a47d1.jpeg',color:'#7cc467',enabled:true},
+  {id:'por-bundle',set:'Perfect Order',type:'Booster Bundle',name:'Perfect Order Booster Bundle',image:'https://www.card-corner.de/media/image/product/3994/lg/pokemon-perfect-order-booster-bundle.webp',color:'#53b36d',enabled:true},
+  {id:'asc-etb',set:'Ascended Heroes',type:'Elite Trainer Box',name:'Ascended Heroes Elite Trainer Box',image:'https://www.binderly.co.uk/cdn/shop/files/PokemonTCG-MegaEvolution-AscendedHeroes-EliteTrainerBox.png?v=1763716803',color:'#ea9958',enabled:true},
+  {id:'asc-bundle',set:'Ascended Heroes',type:'Booster Bundle',name:'Ascended Heroes Booster Bundle',image:'https://vyruztoystore.com.mx/cdn/shop/files/PokemonTCGMegaEvolution_AscendedHeroesBoosterBundle.webp?v=1778483017',color:'#4f82d4',enabled:true},
+  {id:'asc-poster',set:'Ascended Heroes',type:'Collection Box',name:'Premium Poster Collection',image:'https://144753178.cdn6.editmysite.com/uploads/1/4/4/7/144753178/UQS6TSPXWFVIQWNYBJUFABHP.jpeg?optimize=medium&width=2400',color:'#9f64cf',enabled:true},
 ];
 
-const STORAGE='agrkemon.settings.v1';
+const STORAGE='agrkemon.settings.v2';
 const HISTORY='agrkemon.history.v1';
+const SETTINGS_UI='agrkemon.settings.ui.v1';
 let products = loadProducts();
 let draftProducts = clone(products);
 let history = JSON.parse(localStorage.getItem(HISTORY) || '[]');
 let currentRotation = 0;
 let spinning = false;
 let activeProducts=[];
+let settingsUi = loadSettingsUi();
 
 const $ = s => document.querySelector(s);
 const els = {
@@ -44,7 +31,8 @@ const els = {
   poolCount:$('#poolCount'), activeSetStack:$('#activeSetStack'), history:$('#historyList'),
   featuredImage:$('#featuredImage'), featuredFallback:$('#featuredFallback'), featuredSet:$('#featuredSet'), featuredName:$('#featuredName'), featuredType:$('#featuredType'),
   settings:$('#settingsModal'), setFilters:$('#setFilters'), typeFilters:$('#typeFilters'), productGrid:$('#productGrid'), enabledCount:$('#enabledCount'),
-  result:$('#resultOverlay'), resultImage:$('#resultImage'), resultFallback:$('#resultFallback'), resultSet:$('#resultSet'), resultName:$('#resultName'), resultType:$('#resultType')
+  result:$('#resultOverlay'), resultImage:$('#resultImage'), resultFallback:$('#resultFallback'), resultSet:$('#resultSet'), resultName:$('#resultName'), resultType:$('#resultType'),
+  productSearch:$('#productSearch'), focusSetSelect:$('#focusSetSelect'), focusTypeSelect:$('#focusTypeSelect'), productStateSelect:$('#productStateSelect'), productSort:$('#productSort'), quickSelect:$('#quickSelect')
 };
 
 function clone(v){return JSON.parse(JSON.stringify(v));}
@@ -56,11 +44,19 @@ function loadProducts(){
   return clone(DEFAULT_PRODUCTS);
 }
 function saveProducts(){localStorage.setItem(STORAGE,JSON.stringify(products));}
+function loadSettingsUi(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(SETTINGS_UI)||'null');
+    if(saved&&typeof saved==='object') return Object.assign({search:'',set:'all',type:'all',state:'all',sort:'set'},saved);
+  }catch{}
+  return {search:'',set:'all',type:'all',state:'all',sort:'set'};
+}
+function saveSettingsUi(){localStorage.setItem(SETTINGS_UI,JSON.stringify(settingsUi));}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':'&quot;',"'":"&#039;"}[m]));}
 function shortName(name){return name.replace(/Elite Trainer Box/i,'ETB').replace(/Booster Bundle/i,'Bundle').replace(/30th Celebration /i,'').slice(0,20);}
 function imgHtml(p, cls=''){
   if(!p.image) return `<div class="${cls} tile-fallback">TCG</div>`;
-  return `<img class="${cls}" src="${esc(p.image)}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="tile-fallback" style="display:none">TCG</div>`;
+  return `<img class="${cls}" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="tile-fallback" style="display:none">TCG</div>`;
 }
 function currentPool(){return products.filter(p=>p.enabled);}
 
@@ -134,18 +130,56 @@ function closeResult(){els.result.classList.remove('open');els.result.setAttribu
 
 function openSettings(){if(spinning)return;draftProducts=clone(products);renderSettings();els.settings.classList.add('open');els.settings.setAttribute('aria-hidden','false')}
 function closeSettings(){els.settings.classList.remove('open');els.settings.setAttribute('aria-hidden','true')}
+function getFilteredDraftProducts(){
+  const search=settingsUi.search.trim().toLowerCase();
+  let list=draftProducts.map((p,index)=>({...p,_index:index}));
+  if(settingsUi.set!=='all') list=list.filter(p=>p.set===settingsUi.set);
+  if(settingsUi.type!=='all') list=list.filter(p=>p.type===settingsUi.type);
+  if(settingsUi.state==='enabled') list=list.filter(p=>p.enabled);
+  if(settingsUi.state==='disabled') list=list.filter(p=>!p.enabled);
+  if(search) list=list.filter(p=>(`${p.name} ${p.set} ${p.type}`).toLowerCase().includes(search));
+  if(settingsUi.sort==='name') list.sort((a,b)=>a.name.localeCompare(b.name,'cs'));
+  else if(settingsUi.sort==='type') list.sort((a,b)=>(`${a.type} ${a.name}`).localeCompare(`${b.type} ${b.name}`,'cs'));
+  else list.sort((a,b)=>(`${a.set} ${a.name}`).localeCompare(`${b.set} ${b.name}`,'cs'));
+  return list;
+}
 function renderSettings(){
-  const sets=[...new Set(draftProducts.map(p=>p.set))];const types=[...new Set(draftProducts.map(p=>p.type))];
+  const sets=[...new Set(draftProducts.map(p=>p.set))].sort((a,b)=>a.localeCompare(b,'cs'));
+  const types=[...new Set(draftProducts.map(p=>p.type))].sort((a,b)=>a.localeCompare(b,'cs'));
   els.setFilters.innerHTML=sets.map(set=>{const list=draftProducts.filter(p=>p.set===set),active=list.every(p=>p.enabled);return `<label class="filter-chip ${active?'active':''}" data-set="${esc(set)}"><input type="checkbox" ${active?'checked':''}>${esc(set)}</label>`}).join('');
   els.typeFilters.innerHTML=types.map(type=>{const list=draftProducts.filter(p=>p.type===type),active=list.every(p=>p.enabled);return `<label class="filter-chip ${active?'active':''}" data-type="${esc(type)}"><input type="checkbox" ${active?'checked':''}>${esc(type)}</label>`}).join('');
-  els.productGrid.innerHTML=draftProducts.map((p,i)=>`<div class="product-tile ${p.enabled?'':'off'}" data-index="${i}">${imgHtml(p)}<div><strong>${esc(p.name)}</strong><small>${esc(p.set)} · ${esc(p.type)}</small></div><button class="tile-toggle" type="button" aria-label="Zapnout/vypnout"></button></div>`).join('');
-  els.enabledCount.textContent=`${draftProducts.filter(p=>p.enabled).length} aktivních`;
+
+  els.focusSetSelect.innerHTML='<option value="all">Všechny edice</option>'+sets.map(set=>`<option value="${esc(set)}">${esc(set)}</option>`).join('');
+  els.focusTypeSelect.innerHTML='<option value="all">Všechny typy</option>'+types.map(type=>`<option value="${esc(type)}">${esc(type)}</option>`).join('');
+  els.focusSetSelect.value=sets.includes(settingsUi.set)?settingsUi.set:'all';
+  els.focusTypeSelect.value=types.includes(settingsUi.type)?settingsUi.type:'all';
+  els.productSearch.value=settingsUi.search;
+  els.productStateSelect.value=settingsUi.state;
+  els.productSort.value=settingsUi.sort;
+  els.quickSelect.value='all';
+
+  const filtered=getFilteredDraftProducts();
+  els.productGrid.innerHTML=filtered.map(p=>`<div class="product-tile ${p.enabled?'':'off'}" data-index="${p._index}">${imgHtml(p)}<div><strong>${esc(p.name)}</strong><small>${esc(p.set)} · ${esc(p.type)}</small></div><button class="tile-toggle" type="button" aria-label="Zapnout/vypnout"></button></div>`).join('') || '<div class="history-empty">Nic neodpovídá filtru nebo hledání.</div>';
+  els.enabledCount.textContent=`${draftProducts.filter(p=>p.enabled).length}/${draftProducts.length} aktivních`;
   bindSettings();
 }
 function bindSettings(){
-  els.setFilters.querySelectorAll('[data-set]').forEach(ch=>ch.onclick=()=>{const set=ch.dataset.set;const list=draftProducts.filter(p=>p.set===set);const next=!list.every(p=>p.enabled);draftProducts.forEach(p=>{if(p.set===set)p.enabled=next});renderSettings()});
-  els.typeFilters.querySelectorAll('[data-type]').forEach(ch=>ch.onclick=()=>{const type=ch.dataset.type;const list=draftProducts.filter(p=>p.type===type);const next=!list.every(p=>p.enabled);draftProducts.forEach(p=>{if(p.type===type)p.enabled=next});renderSettings()});
+  els.setFilters.querySelectorAll('[data-set]').forEach(ch=>ch.onclick=(e)=>{e.preventDefault();const set=ch.dataset.set;const list=draftProducts.filter(p=>p.set===set);const next=!list.every(p=>p.enabled);draftProducts.forEach(p=>{if(p.set===set)p.enabled=next});renderSettings()});
+  els.typeFilters.querySelectorAll('[data-type]').forEach(ch=>ch.onclick=(e)=>{e.preventDefault();const type=ch.dataset.type;const list=draftProducts.filter(p=>p.type===type);const next=!list.every(p=>p.enabled);draftProducts.forEach(p=>{if(p.type===type)p.enabled=next});renderSettings()});
   els.productGrid.querySelectorAll('.product-tile').forEach(tile=>tile.querySelector('.tile-toggle').onclick=()=>{const p=draftProducts[Number(tile.dataset.index)];p.enabled=!p.enabled;renderSettings()});
+  els.productSearch.oninput=()=>{settingsUi.search=els.productSearch.value;saveSettingsUi();renderSettings()};
+  els.focusSetSelect.onchange=()=>{settingsUi.set=els.focusSetSelect.value;saveSettingsUi();renderSettings()};
+  els.focusTypeSelect.onchange=()=>{settingsUi.type=els.focusTypeSelect.value;saveSettingsUi();renderSettings()};
+  els.productStateSelect.onchange=()=>{settingsUi.state=els.productStateSelect.value;saveSettingsUi();renderSettings()};
+  els.productSort.onchange=()=>{settingsUi.sort=els.productSort.value;saveSettingsUi();renderSettings()};
+  els.quickSelect.onchange=()=>{
+    const mode=els.quickSelect.value;
+    if(mode==='enable-visible') getFilteredDraftProducts().forEach(p=>{draftProducts[p._index].enabled=true});
+    else if(mode==='disable-visible') getFilteredDraftProducts().forEach(p=>{draftProducts[p._index].enabled=false});
+    else if(mode==='only-visible'){const visible=new Set(getFilteredDraftProducts().map(p=>p._index));draftProducts.forEach((p,idx)=>p.enabled=visible.has(idx))}
+    els.quickSelect.value='all';
+    renderSettings();
+  };
 }
 function addCustom(){
   const name=$('#customName').value.trim();if(!name)return;
@@ -155,7 +189,7 @@ function addCustom(){
 
 $('#settingsBtn').onclick=openSettings;$('#quickSettingsBtn').onclick=openSettings;$('#settingsClose').onclick=closeSettings;$('#settingsBackdrop').onclick=closeSettings;
 $('#applyBtn').onclick=()=>{if(!draftProducts.some(p=>p.enabled)){alert('Zapni aspoň jeden produkt.');return}products=clone(draftProducts);saveProducts();renderWheel();closeSettings()};
-$('#resetBtn').onclick=()=>{draftProducts=clone(DEFAULT_PRODUCTS);renderSettings()};
+$('#resetBtn').onclick=()=>{draftProducts=clone(DEFAULT_PRODUCTS);settingsUi={search:'',set:'all',type:'all',state:'all',sort:'set'};saveSettingsUi();renderSettings()};
 $('#enableAllSets').onclick=()=>{draftProducts.forEach(p=>p.enabled=true);renderSettings()};$('#enableAllTypes').onclick=()=>{draftProducts.forEach(p=>p.enabled=true);renderSettings()};
 $('#addCustomBtn').onclick=addCustom;els.spinBtn.onclick=spin;$('#resultClose').onclick=closeResult;$('#resultAgain').onclick=()=>{closeResult();setTimeout(spin,120)};
 $('#fullscreenBtn').onclick=async()=>{try{document.fullscreenElement?await document.exitFullscreen():await document.documentElement.requestFullscreen()}catch{}};
