@@ -40,3 +40,12 @@ body{overflow-x:hidden}.app-shell{min-height:100vh;position:relative;overflow:hi
 .wheel-item-label{max-width:var(--wheel-item-width);font-size:var(--wheel-label-size);line-height:1;flex:0 0 auto}
 .wheel-items.hide-wheel-labels .wheel-item-label{display:none}
 .wheel-items.hide-wheel-labels .wheel-item{height:var(--wheel-thumb-size)}
+
+/* v4 wheel positioning hardening */
+.wheel-rotor,.wheel-items{overflow:hidden!important;border-radius:50%!important}
+.wheel-items{--wheel-thumb-size:56px;--wheel-item-width:56px;--wheel-item-height:56px;--wheel-label-size:0px}
+.wheel-item{position:absolute!important;width:var(--wheel-item-width)!important;height:var(--wheel-item-height)!important;transform-origin:center center!important;display:flex!important;align-items:center!important;justify-content:center!important;pointer-events:none!important}
+.wheel-thumb{width:var(--wheel-thumb-size)!important;height:var(--wheel-thumb-size)!important;min-width:var(--wheel-thumb-size)!important;min-height:var(--wheel-thumb-size)!important;border-radius:12px!important;overflow:hidden!important;background:#fff!important;border:2px solid rgba(255,255,255,.95)!important;box-shadow:0 6px 14px #0008!important}
+.wheel-thumb img{display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;background:#fff!important}
+.wheel-items.hide-wheel-labels .wheel-item-label{display:none!important}
+.wheel-item-label{max-width:82px!important;font-size:var(--wheel-label-size)!important;line-height:1!important}
