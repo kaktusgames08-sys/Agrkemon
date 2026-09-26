@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b18" />
+  <meta name="description" content="Agrkémon — Pokémon TCG kolo štěstí s aktuálními balíčky, boxy a packy." />
+  <title>Agrkémon — Pokémon TCG kolo</title>
+  <link rel="preconnect" href="https://target.scene7.com" />
+  <link rel="preconnect" href="https://www.pokemon.com" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+    <div class="grid"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-ball" aria-hidden="true"><span></span></div>
+        <div>
+          <div class="brand-kicker">POKÉMON TCG WHEEL</div>
+          <h1>AGR<span>KÉMON</span></h1>
+          <p>Co se dneska otevírá?</p>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <button class="icon-btn" id="fullscreenBtn" type="button" title="Fullscreen">⛶</button>
+        <button class="icon-btn" id="settingsBtn" type="button" title="Nastavení">⚙</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel panel-left">
+        <div class="panel-label">AKTIVNÍ POOL</div>
+        <div class="pool-count"><strong id="poolCount">0</strong><span>produktů v kole</span></div>
+        <div class="set-stack" id="activeSetStack"></div>
+
+        <div class="divider"></div>
+        <div class="panel-label">POSLEDNÍ VÝSLEDKY</div>
+        <div class="history" id="historyList"><div class="history-empty">Zatím nic</div></div>
+      </aside>
+
+      <section class="machine" aria-label="Agrkémon kolo štěstí">
+        <div class="machine-title">
+          <span>AGRKÉMON</span>
+          <small>vyber si osud</small>
+        </div>
+
+        <div class="wheel-stage" id="wheelStage">
+          <div class="pointer" aria-hidden="true"><i></i></div>
+          <div class="wheel-glow"></div>
+          <div class="wheel-frame">
+            <div class="wheel-rotor" id="wheelRotor">
+              <div class="wheel-face" id="wheelFace"></div>
+              <div class="wheel-items" id="wheelItems"></div>
+              <div class="hub" aria-hidden="true">
+                <div class="pokeball"><span></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="status-line" id="statusLine"><span></span>PŘIPRAVENO</div>
+
+        <button class="spin-btn" id="spinBtn" type="button">
+          <span class="spin-shine"></span>
+          <strong>ROZTOČIT</strong>
+          <small>SPACE</small>
+        </button>
+      </section>
+
+      <aside class="panel panel-right">
+        <div class="panel-label">AKTUÁLNĚ V KOLE</div>
+        <div class="featured" id="featuredCard">
+          <div class="featured-image-wrap">
+            <img id="featuredImage" alt="" />
+            <div class="image-fallback" id="featuredFallback">?</div>
+          </div>
+          <div class="featured-set" id="featuredSet">30th Celebration</div>
+          <div class="featured-name" id="featuredName">Vyber produkt v nastavení</div>
+          <div class="featured-type" id="featuredType">Pokémon TCG</div>
+        </div>
+        <button class="soft-btn" id="quickSettingsBtn" type="button">UPRAVIT POOL</button>
+      </aside>
+    </main>
+
+    <div class="result-overlay" id="resultOverlay" aria-hidden="true">
+      <div class="result-card">
+        <button class="result-close" id="resultClose" type="button">×</button>
+        <div class="result-kicker">PADLO TI</div>
+        <div class="result-image-wrap">
+          <img id="resultImage" alt="" />
+          <div class="image-fallback big" id="resultFallback">TCG</div>
+        </div>
+        <div class="result-set" id="resultSet"></div>
+        <h2 id="resultName"></h2>
+        <div class="result-type" id="resultType"></div>
+        <button class="result-again" id="resultAgain" type="button">ROZTOČIT ZNOVU</button>
+      </div>
+    </div>
+
+    <div class="settings" id="settingsModal" aria-hidden="true">
+      <div class="settings-backdrop" id="settingsBackdrop"></div>
+      <section class="settings-sheet" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+        <header class="settings-header">
+          <div>
+            <div class="settings-kicker">AGRKÉMON CONFIG</div>
+            <h2 id="settingsTitle">NASTAVENÍ KOLA</h2>
+            <p>Zapni celé edice, typy produktů nebo jednotlivé položky. Změny se ukládají do prohlížeče.</p>
+          </div>
+          <button id="settingsClose" class="settings-close" type="button">×</button>
+        </header>
+
+        <div class="settings-body">
+          <section class="settings-block">
+            <div class="block-heading"><div><span>EDICE</span><h3>Co chceš v kole?</h3></div><button class="tiny-btn" id="enableAllSets">VŠE</button></div>
+            <div class="chip-grid" id="setFilters"></div>
+          </section>
+
+          <section class="settings-block">
+            <div class="block-heading"><div><span>TYP PRODUKTU</span><h3>Packy, boxy, ETB…</h3></div><button class="tiny-btn" id="enableAllTypes">VŠE</button></div>
+            <div class="chip-grid" id="typeFilters"></div>
+          </section>
+
+          <section class="settings-block">
+            <div class="block-heading"><div><span>JEDNOTLIVĚ</span><h3>Konkrétní produkty</h3></div><strong id="enabledCount">0 aktivních</strong></div>
+            <div class="product-grid" id="productGrid"></div>
+          </section>
+
+          <section class="settings-block custom-block">
+            <div class="block-heading"><div><span>VLASTNÍ</span><h3>Přidej vlastní Pokémon produkt</h3></div></div>
+            <div class="custom-form">
+              <input id="customName" placeholder="Název produktu" />
+              <input id="customSet" placeholder="Edice / série" />
+              <select id="customType">
+                <option>Booster</option><option>Booster Bundle</option><option>Elite Trainer Box</option><option>Collection Box</option><option>Tin</option><option>Blister</option><option>Jiné</option>
+              </select>
+              <input id="customImage" placeholder="URL obrázku (volitelné)" />
+              <button id="addCustomBtn" type="button">+ PŘIDAT</button>
+            </div>
+          </section>
+        </div>
+
+        <footer class="settings-footer">
+          <button class="ghost-btn" id="resetBtn" type="button">OBNOVIT VÝCHOZÍ</button>
+          <button class="primary-btn" id="applyBtn" type="button">POUŽÍT NASTAVENÍ</button>
+        </footer>
+      </section>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
