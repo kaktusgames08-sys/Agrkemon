@@ -18,3 +18,16 @@ body{overflow-x:hidden}.app-shell{min-height:100vh;position:relative;overflow:hi
 @media(max-width:1200px){.layout{grid-template-columns:230px minmax(500px,1fr)}.panel-right{display:none}.wheel-stage{width:min(66vh,620px)}}
 @media(max-width:860px){.topbar{padding:16px 18px}.brand h1{font-size:28px}.brand-ball{width:48px;height:48px}.layout{display:block;padding:18px}.panel{display:none}.machine{min-height:calc(100vh - 135px)}.wheel-stage{width:min(92vw,620px)}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.custom-form{grid-template-columns:1fr 1fr}.custom-form button{height:42px}.settings-body{padding:18px 18px 95px}.settings-header,.settings-footer{padding-left:18px;padding-right:18px}}
 @media(max-width:540px){.product-grid{grid-template-columns:1fr}.wheel-thumb{width:54px;height:54px}.wheel-item{width:70px}.wheel-item-label{font-size:7px;max-width:70px}.hub{width:104px;height:104px}.pokeball{width:60px;height:60px}.custom-form{grid-template-columns:1fr}}
+
+/* Agrkemon v2 settings improvements */
+.product-toolbar{display:grid;grid-template-columns:1.8fr repeat(5,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.product-toolbar label{display:flex;flex-direction:column;gap:6px}
+.product-toolbar label span{font-size:10px;color:#8ba1c6;font-weight:900;letter-spacing:.7px}
+.product-toolbar input,.product-toolbar select{height:42px;border:1px solid #2b3d61;border-radius:10px;background:#0b1324;color:#dce8fa;padding:0 12px;font-size:11px;outline:none}
+.product-toolbar input:focus,.product-toolbar select:focus,.custom-form input:focus,.custom-form select:focus{border-color:#6ca4ff;box-shadow:0 0 0 3px #2b6dff26}
+.product-toolbar .search-wrap{grid-column:auto}
+.product-tile img,.wheel-thumb img,.featured-image-wrap img,.result-image-wrap img{image-rendering:auto}
+.product-tile img{padding:0;background:#fff}
+@media(max-width:1100px){.product-toolbar{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.product-toolbar{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.product-toolbar{grid-template-columns:1fr}}
