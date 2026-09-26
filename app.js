@@ -12,6 +12,33 @@ const DEFAULT_PRODUCTS = [
   {id:'asc-etb',set:'Ascended Heroes',type:'Elite Trainer Box',name:'Ascended Heroes Elite Trainer Box',image:'https://www.binderly.co.uk/cdn/shop/files/PokemonTCG-MegaEvolution-AscendedHeroes-EliteTrainerBox.png?v=1763716803',color:'#ea9958',enabled:true},
   {id:'asc-bundle',set:'Ascended Heroes',type:'Booster Bundle',name:'Ascended Heroes Booster Bundle',image:'https://vyruztoystore.com.mx/cdn/shop/files/PokemonTCGMegaEvolution_AscendedHeroesBoosterBundle.webp?v=1778483017',color:'#4f82d4',enabled:true},
   {id:'asc-poster',set:'Ascended Heroes',type:'Collection Box',name:'Premium Poster Collection',image:'https://144753178.cdn6.editmysite.com/uploads/1/4/4/7/144753178/UQS6TSPXWFVIQWNYBJUFABHP.jpeg?optimize=medium&width=2400',color:'#9f64cf',enabled:true},
+
+  {id:'30c-booster-pack',set:'30th Celebration',type:'Booster',name:'30th Celebration Booster Pack',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/30th-celebration-booster-pack/30th-celebration-booster-pack-en.png',color:'#f7cd4c',enabled:true},
+  {id:'30c-booster-bundle',set:'30th Celebration',type:'Booster Bundle',name:'30th Celebration Booster Bundle',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/30th-celebration-booster-bundle/30th-celebration-booster-bundle-en.png',color:'#d9b13b',enabled:true},
+  {id:'30c-mini-tin',set:'30th Celebration',type:'Tin',name:'30th Celebration Mini Tin',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/30th-celebration-mini-tin/30th-celebration-mini-tin-en.png',color:'#eec65b',enabled:true},
+  {id:'30c-binder',set:'30th Celebration',type:'Collection Box',name:'Binder Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/30th-celebration-binder-collection/30th-celebration-binder-collection-en.png',color:'#efcf70',enabled:true},
+  {id:'30c-tin',set:'30th Celebration',type:'Tin',name:'Anniversary Collector Tin',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/30th-celebration-collector-tin/30th-celebration-collector-tin-en.png',color:'#d7a82d',enabled:true},
+  {id:'pbl-pack',set:'Pitch Black',type:'Booster',name:'Pitch Black Booster Pack',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-pitch-black-booster-pack/mega-evolution-pitch-black-booster-pack-en.png',color:'#4b5363',enabled:true},
+  {id:'pbl-3pk',set:'Pitch Black',type:'Blister',name:'Pitch Black 3-Pack Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-pitch-black-3pk-blister/mega-evolution-pitch-black-3pk-blister-en.png',color:'#61687b',enabled:true},
+  {id:'pbl-checklane',set:'Pitch Black',type:'Blister',name:'Pitch Black Checklane Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-pitch-black-checklane-blister/mega-evolution-pitch-black-checklane-blister-en.png',color:'#777e8f',enabled:true},
+  {id:'pbl-tin',set:'Pitch Black',type:'Tin',name:'Pitch Black Collector Tin',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-pitch-black-collector-tin/mega-evolution-pitch-black-collector-tin-en.png',color:'#535862',enabled:true},
+  {id:'pbl-premium',set:'Pitch Black',type:'Collection Box',name:'Pitch Black Premium Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-pitch-black-premium-collection/mega-evolution-pitch-black-premium-collection-en.png',color:'#8b91a3',enabled:true},
+  {id:'cri-pack',set:'Chaos Rising',type:'Booster',name:'Chaos Rising Booster Pack',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-chaos-rising-booster-pack/mega-evolution-chaos-rising-booster-pack-en.png',color:'#ef6474',enabled:true},
+  {id:'cri-3pk',set:'Chaos Rising',type:'Blister',name:'Chaos Rising 3-Pack Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-chaos-rising-3pk-blister/mega-evolution-chaos-rising-3pk-blister-en.png',color:'#de5766',enabled:true},
+  {id:'cri-checklane',set:'Chaos Rising',type:'Blister',name:'Chaos Rising Checklane Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-chaos-rising-checklane-blister/mega-evolution-chaos-rising-checklane-blister-en.png',color:'#cf4b5a',enabled:true},
+  {id:'cri-mini-tin',set:'Chaos Rising',type:'Tin',name:'Chaos Rising Mini Tin',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-chaos-rising-mini-tin/mega-evolution-chaos-rising-mini-tin-en.png',color:'#c84d78',enabled:true},
+  {id:'cri-premium',set:'Chaos Rising',type:'Collection Box',name:'Chaos Rising Premium Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-chaos-rising-premium-collection/mega-evolution-chaos-rising-premium-collection-en.png',color:'#b94478',enabled:true},
+  {id:'por-pack',set:'Perfect Order',type:'Booster',name:'Perfect Order Booster Pack',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-perfect-order-booster-pack/mega-evolution-perfect-order-booster-pack-en.png',color:'#87ce69',enabled:true},
+  {id:'por-3pk',set:'Perfect Order',type:'Blister',name:'Perfect Order 3-Pack Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-perfect-order-3pk-blister/mega-evolution-perfect-order-3pk-blister-en.png',color:'#68bb4e',enabled:true},
+  {id:'por-checklane',set:'Perfect Order',type:'Blister',name:'Perfect Order Checklane Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-perfect-order-checklane-blister/mega-evolution-perfect-order-checklane-blister-en.png',color:'#5cae54',enabled:true},
+  {id:'por-tin',set:'Perfect Order',type:'Tin',name:'Perfect Order Collector Tin',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-perfect-order-collector-tin/mega-evolution-perfect-order-collector-tin-en.png',color:'#7ac54c',enabled:true},
+  {id:'por-premium',set:'Perfect Order',type:'Collection Box',name:'Perfect Order Premium Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/mega-evolution-perfect-order-premium-collection/mega-evolution-perfect-order-premium-collection-en.png',color:'#6fca72',enabled:true},
+  {id:'asc-pack',set:'Ascended Heroes',type:'Booster',name:'Ascended Heroes Booster Pack',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/me2pt5-booster-pack/me2pt5-booster-pack-169-en.png',color:'#f2a15a',enabled:true},
+  {id:'asc-3pk',set:'Ascended Heroes',type:'Blister',name:'Ascended Heroes 3-Pack Blister',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/me2pt5-3pk-blister/me2pt5-3pk-blister-169-en.png',color:'#ef8b4f',enabled:true},
+  {id:'asc-mini-tin',set:'Ascended Heroes',type:'Tin',name:'Ascended Heroes Mini Tin',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/me2pt5-mini-tin/me2pt5-mini-tin-169-en.png',color:'#e57a46',enabled:true},
+  {id:'asc-sticker',set:'Ascended Heroes',type:'Collection Box',name:'Tech Sticker Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/me2pt5-tech-sticker-collection/me2pt5-tech-sticker-collection-169-en.png',color:'#df9154',enabled:true},
+  {id:'asc-figure',set:'Ascended Heroes',type:'Collection Box',name:'Figure Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/me2pt5-figure-collection/me2pt5-figure-collection-169-en.png',color:'#d77360',enabled:true},
+  {id:'asc-super-premium',set:'Ascended Heroes',type:'Collection Box',name:'Super Premium Collection',image:'https://www.pokemon.com/static-assets/content-assets/cms2/img/trading-card-game/series/incrementals/2026/me2pt5-super-premium-collection/me2pt5-super-premium-collection-169-en.png',color:'#bd6acc',enabled:true},
 ];
 
 const STORAGE='agrkemon.settings.v2';
@@ -39,7 +66,7 @@ function clone(v){return JSON.parse(JSON.stringify(v));}
 function loadProducts(){
   try{
     const saved=JSON.parse(localStorage.getItem(STORAGE)||'null');
-    if(Array.isArray(saved)&&saved.length) return saved;
+    if(Array.isArray(saved)&&saved.length) return AgrkemonWheel.mergeSavedProducts(DEFAULT_PRODUCTS,saved);
   }catch{}
   return clone(DEFAULT_PRODUCTS);
 }
@@ -73,11 +100,16 @@ function renderWheel(){
   activeProducts.forEach((p,i)=>{const a=i*slice,b=(i+1)*slice;stops.push(`${p.color} ${a}deg ${b}deg`)});
   els.wheelFace.style.background=`conic-gradient(from -90deg,${stops.join(',')})`;
   els.wheelItems.innerHTML='';
-  const radius = Math.min(230, 205 + Math.max(0,(n-10))*2);
+  const diameter=els.wheelRotor.getBoundingClientRect().width||560;
+  const layout=AgrkemonWheel.getWheelLayout(n,diameter);
+  els.wheelItems.style.setProperty('--wheel-thumb-size',`${layout.thumbSize}px`);
+  els.wheelItems.style.setProperty('--wheel-item-width',`${layout.itemWidth}px`);
+  els.wheelItems.style.setProperty('--wheel-label-size',`${layout.labelSize}px`);
+  els.wheelItems.classList.toggle('hide-wheel-labels',!layout.showLabels);
   activeProducts.forEach((p,i)=>{
     const center=i*slice+slice/2;
     const node=document.createElement('div'); node.className='wheel-item';
-    node.style.transform=`rotate(${center}deg) translate(0,-${radius}px) translate(-50%,-50%) rotate(${-center}deg)`;
+    node.style.transform=`rotate(${center}deg) translate(0,-${layout.radius}px) translate(-50%,-50%) rotate(${-center}deg)`;
     node.innerHTML=`<div class="wheel-thumb">${imgHtml(p)}</div><div class="wheel-item-label" title="${esc(p.name)}">${esc(shortName(p.name))}</div>`;
     els.wheelItems.appendChild(node);
   });
@@ -195,4 +227,6 @@ $('#addCustomBtn').onclick=addCustom;els.spinBtn.onclick=spin;$('#resultClose').
 $('#fullscreenBtn').onclick=async()=>{try{document.fullscreenElement?await document.exitFullscreen():await document.documentElement.requestFullscreen()}catch{}};
 document.addEventListener('keydown',e=>{if(e.repeat)return;if(e.code==='Space'&&!els.settings.classList.contains('open')&&!els.result.classList.contains('open')){e.preventDefault();spin()}if(e.key==='Escape'){closeSettings();closeResult()}});
 
+let resizeRaf=0;
+window.addEventListener('resize',()=>{cancelAnimationFrame(resizeRaf);resizeRaf=requestAnimationFrame(()=>renderWheel())});
 renderWheel();renderHistory();
