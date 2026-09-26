@@ -8,7 +8,7 @@ const DEFAULT_PRODUCTS = [
   {id:'cri-etb',set:'Chaos Rising',type:'Elite Trainer Box',name:'Chaos Rising Elite Trainer Box',image:'https://tradingcardmarket.com/cdn/shop/files/PokemonMegaEvolutionChaosRisingEliteTrainerBox.jpg?v=1773761854&width=1920',color:'#d64557',enabled:true},
   {id:'cri-bundle',set:'Chaos Rising',type:'Booster Bundle',name:'Chaos Rising Booster Bundle',image:'https://card-binder.com/cdn/shop/files/Pokemon-Chaos-Rising-Booster-Bundle.webp?v=1773346490&width=1500',color:'#49a6e9',enabled:true},
   {id:'por-etb',set:'Perfect Order',type:'Elite Trainer Box',name:'Perfect Order Elite Trainer Box',image:'https://i5.walmartimages.com/seo/Pokemon-TCG-Mega-Evolution-Perfect-Order-Elite-Trainer-Box_16847947-8ec4-42c4-a5e3-e2a3b7dfadc0.32f7f8c19c3a35415de631a43c9a47d1.jpeg',color:'#7cc467',enabled:true},
-  {id:'por-bundle',set:'Perfect Order',type:'Booster Bundle',name:'Perfect Order Booster Bundle',image:'https://www.card-corner.de/media/image/product/3994/lg/pokemon-perfect-order-booster-bundle.webp',color:'#53b36d',enabled:true},
+  {id:'por-bundle',set:'Perfect Order',type:'Booster Bundle',name:'Perfect Order Booster Bundle',image:'https://animalkingdoms.co.nz/cdn/shop/files/Pokemon_TCG_Mega_Evolutions_3_Perfect_Order_Booster_Bundle.jpg?v=1776157217',color:'#53b36d',enabled:true},
   {id:'asc-etb',set:'Ascended Heroes',type:'Elite Trainer Box',name:'Ascended Heroes Elite Trainer Box',image:'https://www.binderly.co.uk/cdn/shop/files/PokemonTCG-MegaEvolution-AscendedHeroes-EliteTrainerBox.png?v=1763716803',color:'#ea9958',enabled:true},
   {id:'asc-bundle',set:'Ascended Heroes',type:'Booster Bundle',name:'Ascended Heroes Booster Bundle',image:'https://vyruztoystore.com.mx/cdn/shop/files/PokemonTCGMegaEvolution_AscendedHeroesBoosterBundle.webp?v=1778483017',color:'#4f82d4',enabled:true},
   {id:'asc-poster',set:'Ascended Heroes',type:'Collection Box',name:'Premium Poster Collection',image:'https://144753178.cdn6.editmysite.com/uploads/1/4/4/7/144753178/UQS6TSPXWFVIQWNYBJUFABHP.jpeg?optimize=medium&width=2400',color:'#9f64cf',enabled:true},
@@ -81,9 +81,30 @@ function loadSettingsUi(){
 function saveSettingsUi(){localStorage.setItem(SETTINGS_UI,JSON.stringify(settingsUi));}
 function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':'&quot;',"'":"&#039;"}[m]));}
 function shortName(name){return name.replace(/Elite Trainer Box/i,'ETB').replace(/Booster Bundle/i,'Bundle').replace(/30th Celebration /i,'').slice(0,20);}
+function productFallbackImage(p){
+  const bg=(p.color||'#4aa7ff').replace('#','');
+  const name=String(p.name||'Pokemon').replace(/[&<>"]/g,'');
+  const set=String(p.set||'Pokemon TCG').replace(/[&<>"]/g,'');
+  const type=String(p.type||'Product').replace(/[&<>"]/g,'');
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#${bg}"/><stop offset="1" stop-color="#111827"/></linearGradient></defs>
+    <rect width="512" height="512" rx="48" fill="url(#g)"/>
+    <rect x="54" y="72" width="404" height="300" rx="30" fill="#fff"/>
+    <circle cx="256" cy="220" r="82" fill="#111827"/>
+    <path d="M174 220a82 82 0 0 1 164 0H174z" fill="#ef4056"/>
+    <path d="M174 220a82 82 0 0 0 164 0H174z" fill="#f8fbff"/>
+    <rect x="174" y="208" width="164" height="24" rx="12" fill="#111827"/>
+    <circle cx="256" cy="220" r="34" fill="#fff" stroke="#111827" stroke-width="14"/>
+    <text x="256" y="412" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="900" fill="#fff">${name.slice(0,27)}</text>
+    <text x="256" y="446" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#d7e4ff">${set.slice(0,32)}</text>
+    <text x="256" y="474" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#9fb6dd">${type.slice(0,30)}</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=UTF-8,'+encodeURIComponent(svg);
+}
 function imgHtml(p, cls=''){
-  if(!p.image) return `<div class="${cls} tile-fallback">TCG</div>`;
-  return `<img class="${cls}" src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="tile-fallback" style="display:none">TCG</div>`;
+  const src=p.image||productFallbackImage(p);
+  const fallback=productFallbackImage(p);
+  return `<img class="${cls}" src="${esc(src)}" alt="${esc(p.name)}" loading="lazy" onerror="this.onerror=null;this.src='${esc(fallback)}';">`;
 }
 function currentPool(){return products.filter(p=>p.enabled);}
 
@@ -104,6 +125,7 @@ function renderWheel(){
   const layout=AgrkemonWheel.getWheelLayout(n,diameter);
   els.wheelItems.style.setProperty('--wheel-thumb-size',`${layout.thumbSize}px`);
   els.wheelItems.style.setProperty('--wheel-item-width',`${layout.itemWidth}px`);
+  els.wheelItems.style.setProperty('--wheel-item-height',`${layout.itemHeight}px`);
   els.wheelItems.style.setProperty('--wheel-label-size',`${layout.labelSize}px`);
   els.wheelItems.classList.toggle('hide-wheel-labels',!layout.showLabels);
   activeProducts.forEach((p,i)=>{
@@ -124,11 +146,11 @@ function setFeatured(p){
   if(!p){els.featuredName.textContent='Vyber produkt v nastavení'; return;}
   els.featuredSet.textContent=p.set; els.featuredName.textContent=p.name; els.featuredType.textContent=p.type;
   els.featuredImage.style.display='block'; els.featuredFallback.style.display='grid';
-  if(p.image){els.featuredImage.src=p.image; els.featuredImage.onload=()=>els.featuredFallback.style.display='none'; els.featuredImage.onerror=()=>{els.featuredImage.style.display='none';els.featuredFallback.style.display='grid'}} else {els.featuredImage.removeAttribute('src');els.featuredImage.style.display='none'}
+  els.featuredImage.src=p.image||productFallbackImage(p); els.featuredImage.onload=()=>els.featuredFallback.style.display='none'; els.featuredImage.onerror=()=>{els.featuredImage.onerror=null;els.featuredImage.src=productFallbackImage(p);els.featuredFallback.style.display='none'}
 }
 function renderHistory(){
   if(!history.length){els.history.innerHTML='<div class="history-empty">Zatím nic</div>';return}
-  els.history.innerHTML=history.slice(0,6).map(p=>`<div class="history-item">${p.image?`<img src="${esc(p.image)}" alt="" onerror="this.outerHTML='<div class=&quot;history-fallback&quot;>TCG</div>'">`:'<div class="history-fallback">TCG</div>'}<div><strong>${esc(p.name)}</strong><span>${esc(p.set)}</span></div></div>`).join('');
+  els.history.innerHTML=history.slice(0,6).map(p=>{const src=p.image||productFallbackImage(p),fallback=productFallbackImage(p);return `<div class="history-item"><img src="${esc(src)}" alt="${esc(p.name)}" onerror="this.onerror=null;this.src='${esc(fallback)}';"><div><strong>${esc(p.name)}</strong><span>${esc(p.set)}</span></div></div>`}).join('');
 }
 function beep(freq=520,dur=.035,vol=.03){
   try{const C=window.AudioContext||window.webkitAudioContext;window._agrAudio??=new C();const c=window._agrAudio,o=c.createOscillator(),g=c.createGain();o.frequency.value=freq;o.type='square';g.gain.value=vol;o.connect(g);g.connect(c.destination);o.start();g.gain.exponentialRampToValueAtTime(.0001,c.currentTime+dur);o.stop(c.currentTime+dur)}catch{}
@@ -155,7 +177,7 @@ function spin(){
 function showResult(p){
   els.resultSet.textContent=p.set;els.resultName.textContent=p.name;els.resultType.textContent=p.type;
   els.resultImage.style.display='block';els.resultFallback.style.display='grid';
-  if(p.image){els.resultImage.src=p.image;els.resultImage.onload=()=>els.resultFallback.style.display='none';els.resultImage.onerror=()=>{els.resultImage.style.display='none';els.resultFallback.style.display='grid'}}else{els.resultImage.style.display='none'}
+  els.resultImage.src=p.image||productFallbackImage(p);els.resultImage.onload=()=>els.resultFallback.style.display='none';els.resultImage.onerror=()=>{els.resultImage.onerror=null;els.resultImage.src=productFallbackImage(p);els.resultFallback.style.display='none'}
   els.result.classList.add('open');els.result.setAttribute('aria-hidden','false');
 }
 function closeResult(){els.result.classList.remove('open');els.result.setAttribute('aria-hidden','true')}
