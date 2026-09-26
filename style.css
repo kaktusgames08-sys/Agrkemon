@@ -34,8 +34,9 @@ body{overflow-x:hidden}.app-shell{min-height:100vh;position:relative;overflow:hi
 
 /* Wheel density / clipping safety */
 .wheel-rotor,.wheel-items{overflow:hidden;border-radius:50%}
-.wheel-items{--wheel-thumb-size:68px;--wheel-item-width:94px;--wheel-label-size:8px}
-.wheel-item{width:var(--wheel-item-width);height:calc(var(--wheel-thumb-size) + 24px);gap:4px;pointer-events:none}
-.wheel-thumb{width:var(--wheel-thumb-size);height:var(--wheel-thumb-size);min-width:var(--wheel-thumb-size);min-height:var(--wheel-thumb-size);border-radius:max(8px,calc(var(--wheel-thumb-size) * .2))}
-.wheel-item-label{max-width:var(--wheel-item-width);font-size:var(--wheel-label-size)}
+.wheel-items{--wheel-thumb-size:68px;--wheel-item-width:94px;--wheel-item-height:86px;--wheel-label-size:8px}
+.wheel-item{width:var(--wheel-item-width);height:var(--wheel-item-height);gap:3px;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:flex-start}
+.wheel-thumb{width:var(--wheel-thumb-size);height:var(--wheel-thumb-size);min-width:var(--wheel-thumb-size);min-height:var(--wheel-thumb-size);border-radius:max(8px,calc(var(--wheel-thumb-size) * .2));flex:0 0 auto}
+.wheel-item-label{max-width:var(--wheel-item-width);font-size:var(--wheel-label-size);line-height:1;flex:0 0 auto}
 .wheel-items.hide-wheel-labels .wheel-item-label{display:none}
+.wheel-items.hide-wheel-labels .wheel-item{height:var(--wheel-thumb-size)}
